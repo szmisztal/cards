@@ -12,7 +12,7 @@ class BaseContact():
     def __str__(self):
         return f"{self.name} {self.surname}, {self.phone}, {self.email}"
     
-    def priv_contact(self):
+    def contact(self):
         print(f"Wybieram numer prywatny: {self.phone} i dzwonię do {self.name} {self.surname}")
     
     @property
@@ -29,7 +29,7 @@ class BussinesContact(BaseContact):
     def __str__(self):
         return super().__str__() + f", {self.profession}, {self.company}, {self.bussines_phone}"
     
-    def comp_contact(self):
+    def contact(self):
         print(f"Wybieram numer służbowy: {self.bussines_phone} i dzwonię do {self.name} {self.surname} z firmy {self.company}")
 
     @property
@@ -57,7 +57,7 @@ def create_contacts(card_type, amount):
             raise ValueError("Wrong card type.")
         contacts.append(contact)
     return contacts
-
+        
 base_contacts = create_contacts("base", 3)
 bussines_contacts = create_contacts("bussines", 5)
 
@@ -66,3 +66,4 @@ for contact in base_contacts:
 
 for contact in bussines_contacts:
     print(contact)
+
