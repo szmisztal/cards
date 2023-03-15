@@ -20,8 +20,8 @@ class BaseContact():
         return len(self.name + self.surname)
     
 class BussinesContact(BaseContact):
-    def __init__(self, name, surname, phone, email, profession, company, bussines_phone):
-        super().__init__(name, surname, phone, email)
+    def __init__(self, profession, company, bussines_phone, *args, **kwargs):
+        super().__init__(*args, **kwargs)
         self.profession = profession
         self.company = company
         self.bussines_phone = bussines_phone
