@@ -67,3 +67,4 @@ for contact in base_contacts:
 for contact in bussines_contacts:
     print(contact)
 
+card_1.contact()
